@@ -3,10 +3,18 @@ from os import system
 
 nome = input('Nome da Conta: ')
 serve = input('Digite apenas a numeração do Serv: ')
-Mixer = input('Digite Apenas o Mixer:')
-NivelMixer = input('Digite apenas o nível do Mixer: ')
+##configuração do mixer
+possibilididade_mixer = input('você tem Mixer? ').upper().startswith('Y')
+if possibilididade_mixer:
+    Mixer = input('Digite Apenas o Mixer:')
+    NivelMixer = input('Digite apenas o nível do Mixer: ')
+#finalização da configuração do mixer
 pavilhao = input('Qual o lvl do Pavilhão/Visual? ')
-WosLvl = [int(input('Digite o Nível do Wos respectivamente: ')) for values in range(5)]
+#Configurando Wos
+PossibilidadeWos = input('Tem WOS? Y or N ').upper().startswith('Y') 
+if PossibilidadeWos:
+    WosLvl = input('Digite o Wos: ').replace(',', '.')
+# Finalizando Wos
 Diamantes = int(input('Tem quantos diamantes? '))
 gemas = input('Tem quantas gemas? ')
 PedrasDoLune = int(input('Quantas pedras do lune? '))
@@ -17,6 +25,8 @@ CavPlatinados = int(input('Quantos cav Platinados? '))
 Preco = int(input('Qual o valor da conta em Brl? '))
 Parcelamento = input('Quantas parcelas? ')
 
+
+#####em manunteção
 variavel_final = ''
 def AddVarFinal(comando):
     global variavel_final
@@ -41,14 +51,16 @@ def Verificacao_de_personagem(personagem):
 AddVarFinal(f'Conta {nome} à venda! \n')
 
 AddVarFinal((f'Nick: *{nome}* | Servidor: A-{serve}'))
-if int(NivelMixer) >= 50:
-    AddVarFinal((f'Mixer: {Mixer+'/'+NivelMixer}'))
-else:
-    AddVarFinal((f'Mixer: {Mixer}'))
+#configuraçãoMixerParte2
+if possibilididade_mixer:
+    if int(NivelMixer) >= 50:
+        AddVarFinal((f'Mixer: {Mixer+'/'+NivelMixer}'))
+    else:
+        AddVarFinal((f'Mixer: {Mixer}'))
+#finalização COnfiMixerTotal
 AddVarFinal((f'Pavilhão/Visual: Nível {pavilhao}'))
-#configurando o WOS
-WosLvlConvertido = list(map(str, WosLvl))
-AddVarFinal((f'WOS: {'.'.join(WosLvlConvertido)}'))
+
+AddVarFinal((f'WOS: {WosLvl}')) if PossibilidadeWos else ''
 #diamantes
 AddVarFinal(f'Diamantes: {float(Diamantes)}')
 #gemas
@@ -59,12 +71,12 @@ AddVarFinal(VerificacaoDePosse('Livros Azuis', LivrosAzuis))
 AddVarFinal(VerificacaoDePosse('Livros Verdes', LivrosVerdes))
 AddVarFinal(VerificacaoDePosse('Cosmos triple Speed', TriploSpeed))
 # Personagens e suas Skills
-Verificacao_de_personagem('Thanatos')
-Verificacao_de_personagem('Oneiros')
-Verificacao_de_personagem('Yohma')
-Verificacao_de_personagem('Exclamação Sapuris')
-Verificacao_de_personagem('Shaka DC')
-Verificacao_de_personagem('Apollo')
+# Verificacao_de_personagem('Thanatos')
+# Verificacao_de_personagem('Oneiros')
+# Verificacao_de_personagem('Yohma')
+# Verificacao_de_personagem('Exclamação Sapuris')
+# Verificacao_de_personagem('Shaka DC')
+# Verificacao_de_personagem('Apollo')
 ##reparos
 ##
 ##falta fazer
@@ -94,6 +106,15 @@ AddVarFinal('_Entre em contato no PV para mais detalhes._')
 
 system('cls')
 print(variavel_final)
+
+
+
+# bugs e futuras correções + funcionalidades :
+#ainda tem o bug de sumir os livros azuis
+#ainda tá faltando colocar skills de cavaleiros opcionalmente
+#ainda não tem a opção de colocar os reparos
+#ainda não tem como colocar email substituivel
+#a parada de parcelamento está perguntando duas vezes
  
       
       
