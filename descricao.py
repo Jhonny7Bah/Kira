@@ -95,9 +95,6 @@ AddVarFinal('_Entre em contato no PV para mais detalhes._')
 system('cls')
 print(variavel_final)
  
-
-
-
       
       
       
