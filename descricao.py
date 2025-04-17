@@ -18,7 +18,7 @@ if PossibilidadeWos:
 Diamantes = int(input('Tem quantos diamantes? '))
 gemas = input('Tem quantas gemas? ')
 PedrasDoLune = int(input('Quantas pedras do lune? '))
-LivrosAzuis = int(input('Quantos livros azuis?'))
+LivrosAzuis = input('Quantos livros azuis?')
 LivrosVerdes = int(input('Quantos livros verdes? '))
 TriploSpeed = int(input('Quantos triploSpeed? '))
 CavPlatinados = int(input('Quantos cav Platinados? '))
@@ -39,15 +39,12 @@ def VerificacaoDePosse(texto, objeto):
 def Verificacao_de_personagem(personagem):
     questionamento = input(f'Tem o {personagem}? Y or N ')
     if questionamento.upper().startswith('Y'):
-        nivel = [
-            input('Digite as skills respectivamente: ')
-            for skills in range(4)
-        ]
-        conversao = list(map(str, nivel))
-        final = ''.join(conversao) 
-        AddVarFinal(f'{personagem}: {final}')
+        #manutenção
+        nivel = input('Digite as Skills ')
+        AddVarFinal(f'{personagem}: {nivel}')
         return 
     return 
+#finaliza
 AddVarFinal(f'Conta {nome} à venda! \n')
 
 AddVarFinal((f'Nick: *{nome}* | Servidor: A-{serve}'))
@@ -116,7 +113,7 @@ print(variavel_final)
 #ainda não tem como colocar email substituivel
 #a parada de parcelamento está perguntando duas vezes
  
-      
+
       
       
       
