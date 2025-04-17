@@ -73,12 +73,11 @@ Verificacao_de_personagem('Apollo')
 AddVarFinal(f'Cavaleiros Platinados: {CavPlatinados}' if CavPlatinados >= 1 else '')
 AddVarFinal('')#espaço
 
-#lembre-se que essa parte aqui é o valor do dolar no momento.
-#futuramente, teremos que usar uma api
-#ademais, creio que nesse caso, o uso do round seja inapropiado. 
+
+#a api aparenta ter funcionado direitinho. Até aqui, creio eu que esteja tudo certo. 
 import api_cotacao
 ValorDolar = int(api_cotacao.conversao(Preco))
-#lembrando que tem que pensar uma forma de encaixar o negoviável
+
 
 
 AddVarFinal(f'Valor: {ValorDolar:.2f} USD ou {Preco} BRL')
