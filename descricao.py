@@ -18,7 +18,7 @@ if PossibilidadeWos:
 Diamantes = int(input('Tem quantos diamantes? '))
 gemas = input('Tem quantas gemas? ')
 PedrasDoLune = int(input('Quantas pedras do lune? '))
-LivrosAzuis = input('Quantos livros azuis?')
+LivrosAzuis = int(input('Quantos livros azuis?'))
 LivrosVerdes = int(input('Quantos livros verdes? '))
 TriploSpeed = int(input('Quantos triploSpeed? '))
 CavPlatinados = int(input('Quantos cav Platinados? '))
@@ -34,7 +34,7 @@ def AddVarFinal(comando):
     
 
 def VerificacaoDePosse(texto, objeto):
-    return (f'{texto}: {objeto}') if PedrasDoLune >=1 else ''
+    return (f'{texto}: {objeto}') if objeto >=1 else ''
 
 def Verificacao_de_personagem(personagem):
     questionamento = input(f'Tem o {personagem}? Y or N ')
@@ -107,11 +107,12 @@ print(variavel_final)
 
 
 # bugs e futuras correções + funcionalidades :
-#ainda tem o bug de sumir os livros azuis
+#não tem a opção de frags de livros
 #ainda tá faltando colocar skills de cavaleiros opcionalmente
 #ainda não tem a opção de colocar os reparos
 #ainda não tem como colocar email substituivel
 #a parada de parcelamento está perguntando duas vezes
+#espaçamento exagerado
  
 
       
