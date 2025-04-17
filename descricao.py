@@ -23,7 +23,6 @@ LivrosVerdes = int(input('Quantos livros verdes? '))
 TriploSpeed = int(input('Quantos triploSpeed? '))
 CavPlatinados = int(input('Quantos cav Platinados? '))
 Preco = int(input('Qual o valor da conta em Brl? '))
-Parcelamento = input('Quantas parcelas? ')
 
 
 #####em manunteção
