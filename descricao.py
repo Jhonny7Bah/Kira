@@ -33,7 +33,9 @@ def AddVarFinal(comando):
     
 
 def VerificacaoDePosse(texto, objeto):
-    return (f'{texto}: {objeto}') if objeto >=1 else ''
+    if objeto >=1:
+        return AddVarFinal(f'{texto}: {objeto}')
+    return
 
 def Verificacao_de_personagem(personagem):
     questionamento = input(f'Tem o {personagem}? Y or N ')
@@ -58,14 +60,14 @@ AddVarFinal((f'Pavilhão/Visual: Nível {pavilhao}'))
 
 AddVarFinal((f'WOS: {WosLvl}')) if PossibilidadeWos else ''
 #diamantes
-AddVarFinal(f'Diamantes: {float(Diamantes)}')
+AddVarFinal(f'Diamantes: {Diamantes}')
 #gemas
 AddVarFinal(f'Gemas: {gemas}')
 #pedras
 AddVarFinal(f'Pedras do Lune: {PedrasDoLune}') if PedrasDoLune >=1 else ''
-AddVarFinal(VerificacaoDePosse('Livros Azuis', LivrosAzuis))
-AddVarFinal(VerificacaoDePosse('Livros Verdes', LivrosVerdes))
-AddVarFinal(VerificacaoDePosse('Cosmos triple Speed', TriploSpeed))
+VerificacaoDePosse('Livros Azuis', LivrosAzuis)
+VerificacaoDePosse('Livros Verdes', LivrosVerdes)
+VerificacaoDePosse('Cosmos triple Speed', TriploSpeed)
 # Personagens e suas Skills
 # Verificacao_de_personagem('Thanatos')
 # Verificacao_de_personagem('Oneiros')
@@ -105,20 +107,10 @@ print(variavel_final)
 
 
 
-# bugs e futuras correções + funcionalidades :
+##### bugs e futuras correções + funcionalidades :
 #não tem a opção de frags de livros
 #ainda tá faltando colocar skills de cavaleiros opcionalmente
 #ainda não tem a opção de colocar os reparos
 #ainda não tem como colocar email substituivel
-#a parada de parcelamento está perguntando duas vezes
 #espaçamento exagerado
- 
-
-      
-      
-      
-      
-      
-      
-      
-      
+# futuramente adicionar um corretor para não perder o progresso
