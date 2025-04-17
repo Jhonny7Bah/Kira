@@ -14,8 +14,8 @@ LivrosAzuis = int(input('Quantos livros azuis?'))
 LivrosVerdes = int(input('Quantos livros verdes? '))
 TriploSpeed = int(input('Quantos triploSpeed? '))
 CavPlatinados = int(input('Quantos cav Platinados? '))
-Preco = 1900
-Parcelamento = '4'
+Preco = int(input('Qual o valor da conta em Brl? '))
+Parcelamento = input('Quantas parcelas? ')
 
 variavel_final = ''
 def AddVarFinal(comando):
@@ -29,7 +29,10 @@ def VerificacaoDePosse(texto, objeto):
 def Verificacao_de_personagem(personagem):
     questionamento = input(f'Tem o {personagem}? Y or N ')
     if questionamento.upper().startswith('Y'):
-        nivel = [1,1,1,1,1]
+        nivel = [
+            input('Digite as skills respectivamente: ')
+            for skills in range(4)
+        ]
         conversao = list(map(str, nivel))
         final = ''.join(conversao) 
         AddVarFinal(f'{personagem}: {final}')
@@ -73,9 +76,12 @@ AddVarFinal('')#espaço
 #lembre-se que essa parte aqui é o valor do dolar no momento.
 #futuramente, teremos que usar uma api
 #ademais, creio que nesse caso, o uso do round seja inapropiado. 
-ValorDolar = 5.87
+import api_cotacao
+ValorDolar = int(api_cotacao.conversao(Preco))
 #lembrando que tem que pensar uma forma de encaixar o negoviável
-AddVarFinal(f'Valor: {round(Preco/ValorDolar, 2)} USD ou {Preco} BRL')
+
+
+AddVarFinal(f'Valor: {ValorDolar:.2f} USD ou {Preco} BRL')
 AddVarFinal('')#espaço
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
 if Parcelamento:
