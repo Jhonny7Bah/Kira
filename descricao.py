@@ -1,16 +1,19 @@
+from os import system
+
+
 nome = input('Nome da Conta: ')
 serve = input('Digite apenas a numeração do Serv: ')
 Mixer = input('Digite Apenas o Mixer:')
 NivelMixer = input('Digite apenas o nível do Mixer: ')
 pavilhao = input('Qual o lvl do Pavilhão/Visual? ')
-WasLvl = [int(input('Digite o Nível do Was respectivamente: ')) for values in range(5)]
+WosLvl = [int(input('Digite o Nível do Wos respectivamente: ')) for values in range(5)]
 Diamantes = int(input('Tem quantos diamantes? '))
 gemas = input('Tem quantas gemas? ')
-PedrasDoLune = int('Quantas pedras do lune? ')
+PedrasDoLune = int(input('Quantas pedras do lune? '))
 LivrosAzuis = int(input('Quantos livros azuis?'))
 LivrosVerdes = int(input('Quantos livros verdes? '))
-TriploSpeed = int('Quantos triploSpeed? ')
-CavPlatinados = 2
+TriploSpeed = int(input('Quantos triploSpeed? '))
+CavPlatinados = int(input('Quantos cav Platinados? '))
 Preco = 1900
 Parcelamento = '4'
 
@@ -32,6 +35,7 @@ def Verificacao_de_personagem(personagem):
         AddVarFinal(f'{personagem}: {final}')
         return 
     return 
+AddVarFinal(f'Conta {nome} à venda! \n')
 
 AddVarFinal((f'Nick: *{nome}* | Servidor: A-{serve}'))
 if int(NivelMixer) >= 50:
@@ -39,9 +43,9 @@ if int(NivelMixer) >= 50:
 else:
     AddVarFinal((f'Mixer: {Mixer}'))
 AddVarFinal((f'Pavilhão/Visual: Nível {pavilhao}'))
-#configurando o WAS
-WasLvlConvertido = list(map(str, WasLvl))
-AddVarFinal((f'WOS: {' '.join(WasLvlConvertido)}'))
+#configurando o WOS
+WosLvlConvertido = list(map(str, WosLvl))
+AddVarFinal((f'WOS: {'.'.join(WosLvlConvertido)}'))
 #diamantes
 AddVarFinal(f'Diamantes: {float(Diamantes)}')
 #gemas
@@ -52,12 +56,12 @@ AddVarFinal(VerificacaoDePosse('Livros Azuis', LivrosAzuis))
 AddVarFinal(VerificacaoDePosse('Livros Verdes', LivrosVerdes))
 AddVarFinal(VerificacaoDePosse('Cosmos triple Speed', TriploSpeed))
 # Personagens e suas Skills
-# Verificacao_de_personagem('Thanatos')
-# Verificacao_de_personagem('Oneiros')
-# Verificacao_de_personagem('Yohma')
-# Verificacao_de_personagem('Exclamação Sapuris')
-# Verificacao_de_personagem('Shaka DC')
-# Verificacao_de_personagem('Apollo')
+Verificacao_de_personagem('Thanatos')
+Verificacao_de_personagem('Oneiros')
+Verificacao_de_personagem('Yohma')
+Verificacao_de_personagem('Exclamação Sapuris')
+Verificacao_de_personagem('Shaka DC')
+Verificacao_de_personagem('Apollo')
 ##reparos
 ##
 ##falta fazer
@@ -73,7 +77,7 @@ ValorDolar = 5.87
 #lembrando que tem que pensar uma forma de encaixar o negoviável
 AddVarFinal(f'Valor: {round(Preco/ValorDolar, 2)} USD ou {Preco} BRL')
 AddVarFinal('')#espaço
-Parcelamento = input('Digite um valor caso haja parelamento. Se não houver, aperte enter. ')
+Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
 if Parcelamento:
     AddVarFinal(f'Condição de pagamento parcelado em até *{Parcelamento}x*')
     AddVarFinal('') #espaco
@@ -83,7 +87,7 @@ AddVarFinal('_Pagamento via Pix, Western Union, Wise, PicPay e outros._')
 AddVarFinal('_Entre em contato no PV para mais detalhes._')
 
 
-
+system('cls')
 print(variavel_final)
  
 
