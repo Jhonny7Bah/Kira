@@ -123,7 +123,6 @@ print(variavel_final)
 
 ##### bugs e futuras correções + funcionalidades :
 #não tem a opção de frags de livros
-#ainda tá faltando colocar skills de cavaleiros opcionalmente
 # futuramente adicionar um corretor para não perder o progresso
 
 ##############
