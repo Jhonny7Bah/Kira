@@ -94,6 +94,7 @@ ValorDolar = int(api_cotacao.conversao(Preco))
 
 AddVarFinal(f'Valor: {ValorDolar:.2f} USD ou {Preco} BRL')
 AddVarFinal('')#espaço
+AddVarFinal('E-mail e telefone substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
 if Parcelamento:
     AddVarFinal(f'Condição de pagamento parcelado em até *{Parcelamento}x*')
@@ -114,6 +115,8 @@ print(variavel_final)
 ##### bugs e futuras correções + funcionalidades :
 #não tem a opção de frags de livros
 #ainda tá faltando colocar skills de cavaleiros opcionalmente
-#ainda não tem a opção de colocar os reparos
-#ainda não tem como colocar email substituivel
 # futuramente adicionar um corretor para não perder o progresso
+
+##############
+# opcionais:
+# colocar o 'tem conversa'
