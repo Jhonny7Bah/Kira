@@ -4,7 +4,7 @@ from os import system
 nome = input('Nome da Conta: ')
 serve = input('Digite apenas a numeração do Serv: ')
 ##configuração do mixer
-possibilididade_mixer = input('você tem Mixer? ').upper().startswith('Y')
+possibilididade_mixer = input('você tem Mixer? Y or N ').upper().startswith('Y')
 if possibilididade_mixer:
     Mixer = input('Digite Apenas o Mixer:')
     NivelMixer = input('Digite apenas o nível do Mixer: ')
@@ -69,15 +69,17 @@ VerificacaoDePosse('Livros Azuis', LivrosAzuis)
 VerificacaoDePosse('Livros Verdes', LivrosVerdes)
 VerificacaoDePosse('Cosmos triple Speed', TriploSpeed)
 # Personagens e suas Skills
-# Verificacao_de_personagem('Thanatos')
-# Verificacao_de_personagem('Oneiros')
-# Verificacao_de_personagem('Yohma')
-# Verificacao_de_personagem('Exclamação Sapuris')
-# Verificacao_de_personagem('Shaka DC')
-# Verificacao_de_personagem('Apollo')
+Verificacao_de_personagem('Thanatos')
+Verificacao_de_personagem('Oneiros')
+Verificacao_de_personagem('Yohma')
+Verificacao_de_personagem('Exclamação Sapuris')
+Verificacao_de_personagem('Shaka DC')
+Verificacao_de_personagem('Apolo')
 ##reparos
-##
-##falta fazer
+PossibilidadeReparo = input('Tem reparos? Y or N ').upper().startswith('Y')
+if PossibilidadeReparo:
+    AddVarFinal(f'Reparos: {input('liste os reparos: ')}')
+
 
 #cavaleiros platinados
 AddVarFinal(f'Cavaleiros Platinados: {CavPlatinados}' if CavPlatinados >= 1 else '')
@@ -98,6 +100,8 @@ if Parcelamento:
     AddVarFinal('') #espaco
 
 AddVarFinal('PDF *Atualizado!*')
+AddVarFinal('') #espaco
+
 AddVarFinal('_Pagamento via Pix, Western Union, Wise, PicPay e outros._')
 AddVarFinal('_Entre em contato no PV para mais detalhes._')
 
@@ -112,5 +116,4 @@ print(variavel_final)
 #ainda tá faltando colocar skills de cavaleiros opcionalmente
 #ainda não tem a opção de colocar os reparos
 #ainda não tem como colocar email substituivel
-#espaçamento exagerado
 # futuramente adicionar um corretor para não perder o progresso
