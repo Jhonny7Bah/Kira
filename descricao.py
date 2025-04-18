@@ -15,7 +15,7 @@ PossibilidadeWos = input('Tem WOS? Y or N ').upper().startswith('Y')
 if PossibilidadeWos:
     WosLvl = input('Digite o Wos: ').replace(',', '.')
 # Finalizando Wos
-Diamantes = int(input('Tem quantos diamantes? '))
+Diamantes = (input('Tem quantos diamantes? '))
 gemas = input('Tem quantas gemas? ')
 PedrasDoLune = int(input('Quantas pedras do lune? '))
 LivrosAzuis = int(input('Quantos livros azuis?'))
@@ -122,10 +122,11 @@ print(variavel_final)
 
 
 ##### bugs e futuras correções + funcionalidades :
-#não tem a opção de frags de livros
-#ainda tá faltando colocar skills de cavaleiros opcionalmente
-# futuramente adicionar um corretor para não perder o progresso
+#não tem a opção de frags de livros 
+#resolver o bug da duplicação depois do cr
+
 
 ##############
 # opcionais:
 # colocar o 'tem conversa'
+# futuramente adicionar um corretor para não perder o progresso
