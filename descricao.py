@@ -69,12 +69,21 @@ VerificacaoDePosse('Livros Azuis', LivrosAzuis)
 VerificacaoDePosse('Livros Verdes', LivrosVerdes)
 VerificacaoDePosse('Cosmos triple Speed', TriploSpeed)
 # Personagens e suas Skills
-Verificacao_de_personagem('Thanatos')
-Verificacao_de_personagem('Oneiros')
-Verificacao_de_personagem('Yohma')
-Verificacao_de_personagem('Exclamação Sapuris')
-Verificacao_de_personagem('Shaka DC')
-Verificacao_de_personagem('Apolo')
+PersonagensPossibilidades = input('Personagens: Digite 1 para seguir o padrão e 2 para criar um novo: ')
+if PersonagensPossibilidades == '1':
+    Verificacao_de_personagem('Thanatos')
+    Verificacao_de_personagem('Oneiros')
+    Verificacao_de_personagem('Yohma')
+    Verificacao_de_personagem('Exclamação Sapuris')
+    Verificacao_de_personagem('Shaka DC')
+    Verificacao_de_personagem('Apolo')
+else:
+    print('então você escolheu criar um novo padrão! Me informe o nome dos personagens que deseja inserir!')
+    while True:
+        AddVarFinal(f'{input('Nome do Personagem: ')}: {input('Skills: ')}')
+        if input('deseja continuar? Y or N ').upper().startswith('N'):
+            break
+    #finalização dos personagens 
 ##reparos
 PossibilidadeReparo = input('Tem reparos? Y or N ').upper().startswith('Y')
 if PossibilidadeReparo:
@@ -92,7 +101,7 @@ ValorDolar = int(api_cotacao.conversao(Preco))
 
 
 
-AddVarFinal(f'Valor: {ValorDolar:.2f} USD ou {Preco} BRL')
+AddVarFinal(f'Valor: {ValorDolar:.0f} USD ou {Preco} BRL')
 AddVarFinal('')#espaço
 AddVarFinal('E-mail e telefone substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
