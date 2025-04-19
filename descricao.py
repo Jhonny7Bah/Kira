@@ -116,6 +116,11 @@ AddVarFinal('_Pagamento via Pix, Western Union, Wise, PicPay e outros._')
 AddVarFinal('_Entre em contato no PV para mais detalhes._')
 
 
+#armazenando o progresso em um arquivo
+with open('decFeito.txt', 'w', encoding='utf8') as documento:
+    documento.write(variavel_final)
+
+
 system('cls')
 print(variavel_final)
 
@@ -125,6 +130,8 @@ print(variavel_final)
 #não tem a opção de frags de livros 
 #resolver o bug da duplicação depois do cr
 
+#futura mudança:
+# colocar o cod na base de um bot
 
 ##############
 # opcionais:
