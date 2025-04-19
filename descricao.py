@@ -127,16 +127,13 @@ print(variavel_final)
 
 
 ##### bugs e futuras correções + funcionalidades :
-<<<<<<< HEAD
-#não tem a opção de frags de livros
-# futuramente adicionar um corretor para não perder o progresso
-=======
+
 #não tem a opção de frags de livros 
 #resolver o bug da duplicação depois do cr
 
 #futura mudança:
 # colocar o cod na base de um bot
->>>>>>> develop
+
 
 ##############
 # opcionais:
