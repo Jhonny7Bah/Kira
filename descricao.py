@@ -15,7 +15,7 @@ PossibilidadeWos = input('Tem WOS? Y or N ').upper().startswith('Y')
 if PossibilidadeWos:
     WosLvl = input('Digite o Wos: ').replace(',', '.')
 # Finalizando Wos
-Diamantes = int(input('Tem quantos diamantes? '))
+Diamantes = (input('Tem quantos diamantes? '))
 gemas = input('Tem quantas gemas? ')
 PedrasDoLune = int(input('Quantas pedras do lune? '))
 LivrosAzuis = int(input('Quantos livros azuis?'))
@@ -101,7 +101,7 @@ ValorDolar = int(api_cotacao.conversao(Preco))
 
 
 
-AddVarFinal(f'Valor: {ValorDolar:.0f} USD ou {Preco} BRL')
+AddVarFinal(f'Valor: {ValorDolar:,.0f} USD ou {Preco:,} BRL'.replace(',', '.'))
 AddVarFinal('')#espaço
 AddVarFinal('E-mail e telefone substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
@@ -116,15 +116,29 @@ AddVarFinal('_Pagamento via Pix, Western Union, Wise, PicPay e outros._')
 AddVarFinal('_Entre em contato no PV para mais detalhes._')
 
 
+#armazenando o progresso em um arquivo
+with open('decFeito.txt', 'w', encoding='utf8') as documento:
+    documento.write(variavel_final)
+
+
 system('cls')
 print(variavel_final)
 
 
 
 ##### bugs e futuras correções + funcionalidades :
+<<<<<<< HEAD
 #não tem a opção de frags de livros
 # futuramente adicionar um corretor para não perder o progresso
+=======
+#não tem a opção de frags de livros 
+#resolver o bug da duplicação depois do cr
+
+#futura mudança:
+# colocar o cod na base de um bot
+>>>>>>> develop
 
 ##############
 # opcionais:
 # colocar o 'tem conversa'
+# futuramente adicionar um corretor para não perder o progresso
