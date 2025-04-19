@@ -101,7 +101,7 @@ ValorDolar = int(api_cotacao.conversao(Preco))
 
 
 
-AddVarFinal(f'Valor: {ValorDolar:.0f} USD ou {Preco} BRL')
+AddVarFinal(f'Valor: {ValorDolar:,.0f} USD ou {Preco:,} BRL'.replace(',', '.'))
 AddVarFinal('')#espaço
 AddVarFinal('E-mail e telefone substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
