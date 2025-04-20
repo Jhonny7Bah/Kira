@@ -96,8 +96,7 @@ if PossibilidadeReparo:
 
 
 #cavaleiros platinados
-AddVarFinal(f'Cavaleiros Platinados: {CavPlatinados}' if CavPlatinados >= 1 else '')
-AddVarFinal('')#espaço
+AddVarFinal(f'Cavaleiros Platinados: {CavPlatinados}\n' if CavPlatinados >= 1 else '')
 
 
 #a api aparenta ter funcionado direitinho. Até aqui, creio eu que esteja tudo certo. 
@@ -129,11 +128,6 @@ with open('decFeito.txt', 'w', encoding='utf8') as documento:
 system('cls')
 print(variavel_final)
 
-
-
-##### bugs e futuras correções + funcionalidades :
-#não tem a opção de frags de livros 
-#resolver o bug da duplicação depois do cr
 
 #futura mudança:
 # colocar o cod na base de um bot
