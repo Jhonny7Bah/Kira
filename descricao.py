@@ -129,15 +129,6 @@ system('cls')
 print(variavel_final)
 
 
-<<<<<<< HEAD
-
-##### bugs e futuras correções + funcionalidades :
-
-#não tem a opção de frags de livros 
-#resolver o bug da duplicação depois do cr
-
-=======
->>>>>>> develop
 #futura mudança:
 # colocar o cod na base de um bot
 
