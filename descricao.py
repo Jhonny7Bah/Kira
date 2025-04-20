@@ -15,10 +15,10 @@ PossibilidadeWos = input('Tem WOS? Y or N ').upper().startswith('Y')
 if PossibilidadeWos:
     WosLvl = input('Digite o Wos: ').replace(',', '.')
 # Finalizando Wos
-Diamantes = (input('Tem quantos diamantes? '))
+Diamantes = int(input('Tem quantos diamantes? '))
 gemas = input('Tem quantas gemas? ')
 PedrasDoLune = int(input('Quantas pedras do lune? '))
-LivrosAzuis = int(input('Quantos livros azuis?'))
+LivrosAzuis = input('Quantos livros azuis?').split()
 LivrosVerdes = int(input('Quantos livros verdes? '))
 TriploSpeed = int(input('Quantos triploSpeed? '))
 CavPlatinados = int(input('Quantos cav Platinados? '))
@@ -60,12 +60,17 @@ AddVarFinal((f'Pavilhão/Visual: Nível {pavilhao}'))
 
 AddVarFinal((f'WOS: {WosLvl}')) if PossibilidadeWos else ''
 #diamantes
-AddVarFinal(f'Diamantes: {Diamantes}')
+AddVarFinal(f'Diamantes: {Diamantes:,}'.replace(',', '.'))
 #gemas
 AddVarFinal(f'Gemas: {gemas}')
 #pedras
 AddVarFinal(f'Pedras do Lune: {PedrasDoLune}') if PedrasDoLune >=1 else ''
-VerificacaoDePosse('Livros Azuis', LivrosAzuis)
+#configurando livros azuis
+if int(LivrosAzuis[0]) >=1:
+    AddVarFinal(f'Livros Azuis: {' '.join(LivrosAzuis)}')
+#livros azuis teste finalização
+
+
 VerificacaoDePosse('Livros Verdes', LivrosVerdes)
 VerificacaoDePosse('Cosmos triple Speed', TriploSpeed)
 # Personagens e suas Skills
