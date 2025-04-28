@@ -120,8 +120,8 @@ AddVarFinal('_Entre em contato no PV para mais detalhes._')
 with open('decFeito.txt', 'w', encoding='utf8') as documento:
     documento.write(variavel_final)
 
-
-system('cls')
-system('color 06')
-
-print(variavel_final)
+for bat in ['color 06','cls',variavel_final, 'pause']:
+    if bat == variavel_final:
+        print(variavel_final)
+    else:
+        system(bat)
