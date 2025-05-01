@@ -101,12 +101,20 @@ if PossibilidadeReparo:
 #cavaleiros platinados
 AddVarFinal(f'Cavaleiros Platinados: {CavPlatinados}\n' if CavPlatinados >= 1 else '')
 
-Preco = int(input('Qual o valor da conta em Brl? '))
-#a api aparenta ter funcionado direitinho. Até aqui, creio eu que esteja tudo certo. 
+##Valor da conta
+system('cls')
 import api_cotacao
-ValorDolar = int(api_cotacao.conversao(Preco))
-
-AddVarFinal(f'Valor: {ValorDolar:,.0f} USD ou {Preco:,} BRL'.replace(',', '.'))
+print('É  brl ou dolar?')
+dolar_ou_brl = input('Digite "D" para dolar e "B" para brl: ')
+Preco = int(input('Qual o valor da conta? '))
+if dolar_ou_brl.upper().startswith('D'):
+    valor_brl = int(api_cotacao.dolar_para_brl(Preco))
+    valor_usd = Preco
+else:
+    valor_usd = int(api_cotacao.brl_para_dolar(Preco)) #converte de brl para dolar
+    valor_brl = Preco
+AddVarFinal(f'Valor: {valor_usd:,.0f} USD ou {valor_brl:,} BRL '.replace(',', '.'))
+#####################
 AddVarFinal('')#espaço
 AddVarFinal('E-mail e telefone substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
