@@ -27,11 +27,13 @@ PossibilidadeWos = input('Tem Vontade Estelar? Y or N ').upper().startswith('Y')
 if PossibilidadeWos:
     WosLvl = input('Digite os lvls da Vontade Estelar: ')
 # Finalizando Wos 
+#Cupons Investidos
+cupons = input('Quantos cupons? (em K) ')
 ###############
 ##configuração do mixer
 possibilididade_mixer = input('você tem Mixer? Y or N ').upper().startswith('Y')
 if possibilididade_mixer:
-    Mixer = input('Digite Apenas o Mixer:')
+    Mixer = input('Digite Apenas o Mixer: ')
     NivelMixer = input('Digite apenas o nível do Mixer: ')
 #finalização da configuração do mixer
 pavilhao = input('Qual o lvl do Pavilhão/Visual? ')
@@ -41,9 +43,9 @@ if PossibilidadeReparo: reparos = input('liste os reparos: ')
 ##
 system('cls')
 CavPlatinados = int(input('Quantos cav Platinados? '))
-gemas = input('Tem quantas gemas? ')
+gemas = int(input('Tem quantas gemas? '))
 Diamantes = int(input('Tem quantos diamantes? '))
-LivrosAzuis = input('Quantos livros azuis?').split()
+LivrosAzuis = input('Quantos livros azuis? ').split()
 LivrosVerdes = int(input('Quantos livros verdes? '))
 PedrasDoLune = int(input('Quantas pedras do lune? '))
 TriploSpeed = int(input('Quantos triploSpeed? '))
@@ -64,8 +66,11 @@ if possibilididade_mixer:
 #finalização COnfiMixerTotal
 AddVarFinal((f'Pavilhão/Visual: Nível {pavilhao}'))
 AddVarFinal((f'WOS: {WosLvl}')) if PossibilidadeWos else ''
+###cupons investidos
+AddVarFinal(f'Cupons Investidos: {cupons}K') if int(cupons) >= 100 else ''
+######
 AddVarFinal(f'Diamantes: {Diamantes:,}'.replace(',', '.'))
-AddVarFinal(f'Gemas: {gemas}')
+AddVarFinal(f'Gemas: {gemas:,}'.replace(',','.'))
 AddVarFinal(f'Pedras do Lune: {PedrasDoLune}') if PedrasDoLune >=1 else ''
 #configurando livros azuis
 if int(LivrosAzuis[0]) >=1:
