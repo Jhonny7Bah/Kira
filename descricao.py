@@ -27,11 +27,13 @@ PossibilidadeWos = input('Tem Vontade Estelar? Y or N ').upper().startswith('Y')
 if PossibilidadeWos:
     WosLvl = input('Digite os lvls da Vontade Estelar: ')
 # Finalizando Wos 
+#Cupons Investidos
+cupons = input('Quantos cupons? (em K) ')
 ###############
 ##configuração do mixer
 possibilididade_mixer = input('você tem Mixer? Y or N ').upper().startswith('Y')
 if possibilididade_mixer:
-    Mixer = input('Digite Apenas o Mixer:')
+    Mixer = input('Digite Apenas o Mixer: ')
     NivelMixer = input('Digite apenas o nível do Mixer: ')
 #finalização da configuração do mixer
 pavilhao = input('Qual o lvl do Pavilhão/Visual? ')
@@ -41,9 +43,9 @@ if PossibilidadeReparo: reparos = input('liste os reparos: ')
 ##
 system('cls')
 CavPlatinados = int(input('Quantos cav Platinados? '))
-gemas = input('Tem quantas gemas? ')
+gemas = int(input('Tem quantas gemas? '))
 Diamantes = int(input('Tem quantos diamantes? '))
-LivrosAzuis = input('Quantos livros azuis?').split()
+LivrosAzuis = input('Quantos livros azuis? ').split()
 LivrosVerdes = int(input('Quantos livros verdes? '))
 PedrasDoLune = int(input('Quantas pedras do lune? '))
 TriploSpeed = int(input('Quantos triploSpeed? '))
@@ -64,15 +66,18 @@ if possibilididade_mixer:
 #finalização COnfiMixerTotal
 AddVarFinal((f'Pavilhão/Visual: Nível {pavilhao}'))
 AddVarFinal((f'WOS: {WosLvl}')) if PossibilidadeWos else ''
+###cupons investidos
+AddVarFinal(f'Cupons Investidos: {cupons}K') if int(cupons) >= 100 else ''
+######
 AddVarFinal(f'Diamantes: {Diamantes:,}'.replace(',', '.'))
-AddVarFinal(f'Gemas: {gemas}')
+AddVarFinal(f'Gemas: {gemas:,}'.replace(',','.'))
 AddVarFinal(f'Pedras do Lune: {PedrasDoLune}') if PedrasDoLune >=1 else ''
 #configurando livros azuis
 if int(LivrosAzuis[0]) >=1:
     AddVarFinal(f'Livros Azuis: {' '.join(LivrosAzuis)}')
 #livros azuis teste finalização
 VerificacaoDePosse('Livros Verdes', LivrosVerdes)
-VerificacaoDePosse('Cosmos triple Speed', TriploSpeed)
+VerificacaoDePosse('Cosmos Triplo Speed', TriploSpeed)
 
 #cavaleiros 
 if PersonagensPossibilidades == '1':
@@ -96,14 +101,22 @@ if PossibilidadeReparo:
 #cavaleiros platinados
 AddVarFinal(f'Cavaleiros Platinados: {CavPlatinados}\n' if CavPlatinados >= 1 else '')
 
-Preco = int(input('Qual o valor da conta em Brl? '))
-#a api aparenta ter funcionado direitinho. Até aqui, creio eu que esteja tudo certo. 
+##Valor da conta
+system('cls')
 import api_cotacao
-ValorDolar = int(api_cotacao.conversao(Preco))
-
-AddVarFinal(f'Valor: {ValorDolar:,.0f} USD ou {Preco:,} BRL'.replace(',', '.'))
+print('É  brl ou dolar?')
+dolar_ou_brl = input('Digite "D" para dolar e "B" para brl: ')
+Preco = int(input('Qual o valor da conta? '))
+if dolar_ou_brl.upper().startswith('D'):
+    valor_brl = int(api_cotacao.dolar_para_brl(Preco))
+    valor_usd = Preco
+else:
+    valor_usd = int(api_cotacao.brl_para_dolar(Preco)) #converte de brl para dolar
+    valor_brl = Preco
+AddVarFinal(f'Valor: {valor_usd:,.0f} USD ou {valor_brl:,} BRL '.replace(',', '.'))
+#####################
 AddVarFinal('')#espaço
-AddVarFinal('E-mail e telefone substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
+AddVarFinal('E-mail e Telefone Substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
 if Parcelamento:
     AddVarFinal(f'Condição de pagamento parcelado em até *{Parcelamento}x*')
