@@ -77,7 +77,7 @@ if int(LivrosAzuis[0]) >=1:
     AddVarFinal(f'Livros Azuis: {' '.join(LivrosAzuis)}')
 #livros azuis teste finalização
 VerificacaoDePosse('Livros Verdes', LivrosVerdes)
-VerificacaoDePosse('Cosmos triple Speed', TriploSpeed)
+VerificacaoDePosse('Cosmos Triplo Speed', TriploSpeed)
 
 #cavaleiros 
 if PersonagensPossibilidades == '1':
