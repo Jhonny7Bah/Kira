@@ -1,6 +1,7 @@
 import requests
 url = 'https://economia.awesomeapi.com.br/json/last/USD-BRL'
 
+####para brl
 requesicao = requests.get(url)
 def brl_para_dolar(valor):
     if requesicao.status_code == 200:

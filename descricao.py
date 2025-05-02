@@ -116,7 +116,7 @@ else:
 AddVarFinal(f'Valor: {valor_usd:,.0f} USD ou {valor_brl:,} BRL '.replace(',', '.'))
 #####################
 AddVarFinal('')#espaço
-AddVarFinal('E-mail e telefone substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
+AddVarFinal('E-mail e Telefone Substituíveis \n') if input('Email e telefone substituível? Y or N ').upper().startswith('Y') else ''
 Parcelamento = input('Digite um valor caso haja parcelamento. Se não houver, aperte enter. ')
 if Parcelamento:
     AddVarFinal(f'Condição de pagamento parcelado em até *{Parcelamento}x*')
