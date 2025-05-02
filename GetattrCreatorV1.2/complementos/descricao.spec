@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['descicao.txt'],
+    ['descricao.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='descicao',
+    name='descricao',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
